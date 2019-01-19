@@ -1,0 +1,10 @@
+<div class="card-columns animated fadeIn puntero">
+    <div class="card" (click)="openArtist(item)" *ngFor="let item of items">
+        <img class="card-img-top" [src]="item.images | noimage" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{item.name}}</h5>
+            <span *ngFor="let artista of item.artists" class="badge badge-pill badge-info">{{artista.name}}</span>
+            <!-- <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+        </div>
+    </div>
+</div>

@@ -1,3 +1,21 @@
-<p>
-  search works!
-</p>
+<div class="m-5">
+    <div class="row">
+        <div class="col">
+            <input #termino type="text" (keyup)="buscar(termino.value)" class="form-control" placeholder="Buscar Artista">
+        </div>
+    </div>
+
+    <app-loading *ngIf="loading" class="m-5"></app-loading>
+
+    <app-tarjetas class=" m-5" *ngIf="!loading" [items]="artistasResult"></app-tarjetas>
+
+    <!-- <div class="card-columns m-2" *ngIf="!loading">
+        <div class="card" *ngFor="let arti of artistasResult">
+            <img class="card-img-top" [src]="arti.images | noimage" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{arti.name}}</h5>
+                <p class="card-text" class="badge badge-pill badge-info">Popularity: {{arti.popularity}}</p>
+            </div>
+        </div>
+    </div> -->
+</div>
