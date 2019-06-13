@@ -11,18 +11,15 @@ export class SearchComponent implements OnInit {
   public artistasResult: any;
   loading: boolean;
 
-  constructor( private spotiSrv : SpotifyService) { 
-    
-  }
+  constructor( private spotiSrv: SpotifyService) {}
 
   ngOnInit() {
   }
 
-  // tslint:disable-next-line:whitespace
-  buscar(termino:string) {
+  buscar(termino: string) {
     console.log(termino);
     this.loading = true;
-    this.spotiSrv.getArtistas(termino).subscribe((result:any) => {
+    this.spotiSrv.getArtistas(termino).subscribe((result: any) => {
       console.log('Result::', result);
       this.artistasResult = result;
       this.loading = false;
